@@ -1,33 +1,33 @@
 const students = [
   {
-    id: '0',
+    id: 'student1',
     firstName: 'Billy',
     lastName: 'Campbell',
     isDead: false,
   },
   {
-    id: '1',
+    id: 'student2',
     firstName: 'Pete',
     lastName: 'Stewart',
     isDead: false,
   },
   {
-    id: '2',
+    id: 'student3',
     firstName: 'Brooke',
     lastName: 'Nemchak',
     isDead: false,
   },
   {
-    id: '3',
+    id: 'student4',
     firstName: 'Jeanine',
     lastName: 'Beckle',
     isDead: false,
   },
   {
-    id: '4',
+    id: 'student5',
     firstName: 'Jim',
     lastName: 'Browning',
-    isDead: false,
+    isDead: true,
   },
 ];
 
@@ -46,7 +46,7 @@ const dearlyBeloved = () => {
   const deadStudents = [];
 
   students.forEach((student) => {
-    if (students.isDead === true) {
+    if (student.isDead === true) {
       deadStudents.push(student);
     }
   });
@@ -54,7 +54,10 @@ const dearlyBeloved = () => {
 };
 
 const followTheLight = (studentId) => {
-
-
-}
+  students.forEach((response) => {
+    if (response.id === studentId) {
+      response.isDead = true;
+    }
+  });
+};
 export default { livingStudents, dearlyBeloved, followTheLight };
