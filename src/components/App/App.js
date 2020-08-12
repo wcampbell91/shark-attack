@@ -19,13 +19,23 @@ class App extends React.Component {
     this.setState({ livingStudents, deadStudents });
   }
 
+  killAStudent = (studentId) => {
+    // call data function
+    console.error(studentId);
+    studentsData.followTheLight(studentId);
+    // get all updated students
+    const livingStudents = studentsData.livingStudents();
+    const deadStudents = studentsData.dearlyBeloved();
+    // set state of living and dead students
+    this.setState({ livingStudents, deadStudents });
+  }
+
   render() {
     const { livingStudents, deadStudents } = this.state;
 
     return (
       <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <SharkTank livingStudents={livingStudents} />
+        <SharkTank livingStudents={livingStudents} killAStudent={this.killAStudent}/>
         <Graveyard deadStudents={deadStudents} />
       </div>
     );

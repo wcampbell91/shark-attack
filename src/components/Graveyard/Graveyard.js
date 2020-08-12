@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import studentsShape from '../../helpers/props/studentsShape';
+import GraveStone from '../GraveStone/GraveStone';
+
+import './Graveyard.scss';
 
 class Graveyard extends React.Component {
   static propTypes = {
@@ -8,9 +11,17 @@ class Graveyard extends React.Component {
   }
 
   render() {
+    const { deadStudents } = this.props;
+
+    const deadStudentCards = deadStudents.map((student) => (
+      <GraveStone key={student.id} student={student}/>
+    ));
     return (
-      <div>
-        <h2>Graveyard</h2>
+      <div className="graveyard container display-flex flex-wrap justify-content-center text-light">
+        <h2 className="mt-2">Graveyard</h2>
+        <div className="row justify-content-center">
+        { deadStudentCards }
+        </div>
       </div>
     );
   }

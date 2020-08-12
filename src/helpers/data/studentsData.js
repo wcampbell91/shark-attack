@@ -1,30 +1,30 @@
 const students = [
   {
-    id: 'student1',
+    id: 'student0',
     firstName: 'Billy',
     lastName: 'Campbell',
     isDead: false,
   },
   {
-    id: 'student2',
+    id: 'student1',
     firstName: 'Pete',
     lastName: 'Stewart',
     isDead: false,
   },
   {
-    id: 'student3',
+    id: 'student2',
     firstName: 'Brooke',
     lastName: 'Nemchak',
     isDead: false,
   },
   {
-    id: 'student4',
+    id: 'student3',
     firstName: 'Jeanine',
     lastName: 'Beckle',
     isDead: false,
   },
   {
-    id: 'student5',
+    id: 'student4',
     firstName: 'Jim',
     lastName: 'Browning',
     isDead: true,
